@@ -135,95 +135,93 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
+    
+    <!-- Abstract -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Virtual try-on technology has seen significant advancements in recent years, particularly in the domain of apparel visualization. However, a notable gap exists in high-resolution (720 &times; 540) datasets that adequately represent diverse poses and orientations for Indic clothing styles. To address this, we introduce a novel dataset, IndicViton, comprising multiple poses of the same garment around the wearer. This dataset fills a critical void as existing open-source collections lack such diversity. In addition to dataset creation, we propose an initial diffusion model (DIVA) tailored for Indic virtual try-on applications. Our model leverages a novel approach to handle multi-pose garment images, enabling realistic and accurate virtual fitting experiences. Central to our methodology is the utilization of diffusion models, which excel in capturing intricate details and variations in fabric textures.
-        </p>        
+          </p>
           <p>
             To validate our approach, we conducted comprehensive experimental evaluations, comparing our results against established benchmarks. Results demonstrated superior visual fidelity and quantitative performance in Indic virtual try-on scenarios. By providing this dataset and model, we aim to spur further research and development in virtual try-on technologies tailored for Indic clothing styles. The link for the dataset is attached <a href="https://huggingface.co/datasets/saisriteja/DIVA/tree/main">here</a>.
-        </p>        
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-
-    <!-- Method. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Method</h2>
-        <img src="./static/fs_images/imgs/intro.drawio.jpg" class="center" width="800px">
-        <div class="content has-text-justified">
-          <p>
-            Generated results of DIVA Model which is trained on IndicViton dataset.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Method. -->
-
-  </div>
-
-
-	
-
-
-<div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <!-- <h2 class="title is-3">Results</h2> -->
-    <img src="static/fs_images/imgs/dataset.jpg" class="center" width="1000px">
-    <div class="content has-text-justified">
-        <p style="text-align:center">
-          Diverse Indian clothing examples from the IndicViton dataset.
-        </p>
+    <!-- /Abstract -->
+    
+    <!-- Method -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <figure>
+          <img src="./static/fs_images/imgs/intro.drawio.jpg" class="center" width="800px" alt="Method illustration">
+          <figcaption>
+            Generated results of DIVA Model trained on the IndicViton dataset.
+          </figcaption>
+        </figure>
+      </div>
     </div>
-  </div>
-</div>
+    <!-- /Method -->
 
-
-<div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <h2 class="title is-3">Results</h2>
-    <img src="static/fs_images/imgs/final_imgs/men_clothing.jpg" class="center" width="1000px">
-    <div class="content has-text-justified">
-        <p style="text-align:center">
-          Qualitative comparison between models for men’s clothing: Each row displays Agnostic Map and Target Cloth Ground Truth, followed by results generated
-by CATDM, Stable-VITON, and DIVA.
-        </p>
+    <!-- Dataset Examples -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <figure>
+          <img src="static/fs_images/imgs/dataset.jpg" class="center" width="1000px" alt="IndicViton dataset examples">
+          <figcaption style="text-align:center">
+            Diverse Indian clothing examples from the IndicViton dataset.
+          </figcaption>
+        </figure>
+      </div>
     </div>
-  </div>
-</div>
+    <!-- /Dataset Examples -->
 
-
-<div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <h2 class="title is-3">Results</h2>
-    <img src="static/fs_images/imgs/final_imgs/women_clothing.jpg" class="center" width="1000px">
-    <div class="content has-text-justified">
-        <p style="text-align:center">
-          Qualitative comparison between models for women clothing: Each row displays Agnostic Map and Target Cloth Ground Truth, followed by results generated
-by CATDM, Stable-VITON, and DIVA.
-        </p>
+    <!-- Results: Men’s Clothing -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <figure>
+          <img src="static/fs_images/imgs/final_imgs/men_clothing.jpg" class="center" width="1000px" alt="Results for men’s clothing">
+          <figcaption style="text-align:center">
+            Qualitative comparison between models for men’s clothing: Each row displays Agnostic Map and Target Cloth Ground Truth, followed by results generated by CATDM, Stable-VITON, and DIVA.
+          </figcaption>
+        </figure>
+      </div>
     </div>
-  </div>
-</div>
+    <!-- /Results: Men’s Clothing -->
 
-
-<div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <h2 class="title is-3">Results</h2>
-    <img src="static/fs_images/imgs/final_imgs/scribble_map_crop.drawio.jpg" class="center" width="1000px">
-    <div class="content has-text-justified">
-        <p style="text-align:center">
-          Generated sarees from various scribble maps, highlighting the influence of map variations.
-        </p>
+    <!-- Results: Women’s Clothing -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <figure>
+          <img src="static/fs_images/imgs/final_imgs/women_clothing.jpg" class="center" width="1000px" alt="Results for women’s clothing">
+          <figcaption style="text-align:center">
+            Qualitative comparison between models for women’s clothing: Each row displays Agnostic Map and Target Cloth Ground Truth, followed by results generated by CATDM, Stable-VITON, and DIVA.
+          </figcaption>
+        </figure>
+      </div>
     </div>
-  </div>
-</div>
+    <!-- /Results: Women’s Clothing -->
 
+    <!-- Results: Scribble Maps -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <figure>
+          <img src="static/fs_images/imgs/final_imgs/scribble_map_crop.drawio.jpg" class="center" width="1000px" alt="Generated sarees from scribble maps">
+          <figcaption style="text-align:center">
+            Generated sarees from various scribble maps, highlighting the influence of map variations.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <!-- /Results: Scribble Maps -->
+
+  </div>
 </section>
 
 
@@ -236,7 +234,6 @@ by CATDM, Stable-VITON, and DIVA.
   </div>
 </section>
 
-  
 
 <footer class="footer">
   <div class="container">

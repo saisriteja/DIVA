@@ -193,205 +193,233 @@
 
 
 
-    <!-- Dataset Examples -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <figure>
-          <img src="static/fs_images/imgs/dataset.jpg" class="center" width="1000px" alt="IndicViton dataset examples">
-          <figcaption style="text-align:center">
-            Diverse Indian clothing examples from the IndicViton dataset.
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <!-- /Dataset Examples -->
+<h2>Dataset Analytics</h2>
+<!-- Dataset Examples -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <figure>
+      <img src="static/fs_images/imgs/dataset.jpg" class="center" width="1000px" alt="IndicViton dataset examples">
+      <figcaption style="text-align:center">
+        Diverse Indian clothing examples from the IndicViton dataset.
+      </figcaption>
+    </figure>
+  </div>
+</div>
+<!-- /Dataset Examples -->
 
+<h1 style="text-align: center;">Dataset Analytics</h1>
 
+<h3 style="text-align: center;">Women’s Clothing Analytics collected from Myntra</h3>
+<div style="display: flex; justify-content: center; padding: 20px;">
+  <table class="fancy-table">
+    <thead>
+      <tr>
+        <th rowspan="2">Embellishment/Design Element</th>
+        <th colspan="3">Cloth Type</th>
+        <th rowspan="2">Total</th>
+      </tr>
+      <tr>
+        <th>Kurtas</th>
+        <th>Lehengas</th>
+        <th>Sarees</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sequins</td>
+        <td>332</td>
+        <td>684</td>
+        <td>325</td>
+        <td>1341</td>
+      </tr>
+      <tr>
+        <td>Zari Work</td>
+        <td>166</td>
+        <td>673</td>
+        <td>2269</td>
+        <td>3108</td>
+      </tr>
+      <tr>
+        <td>Bandhani</td>
+        <td>77</td>
+        <td>43</td>
+        <td>215</td>
+        <td>335</td>
+      </tr>
+      <tr>
+        <td>Leheriya</td>
+        <td>25</td>
+        <td>57</td>
+        <td>103</td>
+        <td>185</td>
+      </tr>
+      <tr>
+        <td>Gotta Patti</td>
+        <td>192</td>
+        <td>147</td>
+        <td>57</td>
+        <td>396</td>
+      </tr>
+      <tr>
+        <td>Mirror Work</td>
+        <td>165</td>
+        <td>116</td>
+        <td>54</td>
+        <td>335</td>
+      </tr>
+      <tr>
+        <td>Ethnic Motifs</td>
+        <td>1471</td>
+        <td>-</td>
+        <td>1455</td>
+        <td>2926</td>
+      </tr>
+      <tr>
+        <td>Beads & Stones</td>
+        <td>84</td>
+        <td>191</td>
+        <td>154</td>
+        <td>429</td>
+      </tr>
+      <tr>
+        <td>Floral Motifs</td>
+        <td>1387</td>
+        <td>-</td>
+        <td>1403</td>
+        <td>2790</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-    <h1>Dataset Analytics</h1>
+<h3 style="text-align: center;">Men's Clothing Analytics collected from Myntra</h3>
+<div style="display: flex; justify-content: center; padding: 20px;">
+  <table class="fancy-table">
+    <thead>
+      <tr>
+        <th>Pattern</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Solid</td>
+        <td>572</td>
+      </tr>
+      <tr>
+        <td>Ethnic Motifs</td>
+        <td>370</td>
+      </tr>
+      <tr>
+        <td>Geometric</td>
+        <td>235</td>
+      </tr>
+      <tr>
+        <td>Striped</td>
+        <td>186</td>
+      </tr>
+      <tr>
+        <td>Floral</td>
+        <td>127</td>
+      </tr>
+      <tr>
+        <td>Woven Design</td>
+        <td>66</td>
+      </tr>
+      <tr>
+        <td>Abstract</td>
+        <td>62</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
+<h3 style="text-align: center;">Entire dataset used after cleaning and proper annotations</h3>
+<div style="display: flex; justify-content: center; padding: 20px;">
+  <table class="fancy-table">
+    <thead>
+      <tr>
+        <th colspan="2">Women’s Ethnic Clothes</th>
+        <th colspan="2">Men’s Ethnic Clothes</th>
+      </tr>
+      <tr>
+        <th>Cloth Name</th>
+        <th>Count</th>
+        <th>Cloth Name</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tops</td>
+        <td>6167</td>
+        <td>Kurtas</td>
+        <td>1719</td>
+      </tr>
+      <tr>
+        <td>Sarees</td>
+        <td>6005</td>
+        <td>Sherwanis</td>
+        <td>1498</td>
+      </tr>
+      <tr>
+        <td>Kurtas</td>
+        <td>4549</td>
+        <td>Dhoti Pants</td>
+        <td>1494</td>
+      </tr>
+      <tr>
+        <td>Maxi Skirts</td>
+        <td>2481</td>
+        <td>Nehru Jackets</td>
+        <td>1748</td>
+      </tr>
+      <tr>
+        <td>Lehengas</td>
+        <td>3377</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Total</strong></td>
+        <td><strong>22579</strong></td>
+        <td><strong>Total</strong></td>
+        <td><strong>6459</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-
-    <h3>Women’s Clothing Analytics</h3>
-    <table border="1" cellpadding="10" cellspacing="0">
-      <thead>
-        <tr>
-          <th rowspan="2">Embellishment/Design Element</th>
-          <th colspan="3">Cloth Type</th>
-          <th rowspan="2">Total</th>
-        </tr>
-        <tr>
-          <th>Kurtas</th>
-          <th>Lehengas</th>
-          <th>Sarees</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Sequins</td>
-          <td>332</td>
-          <td>684</td>
-          <td>325</td>
-          <td>1341</td>
-        </tr>
-        <tr>
-          <td>Zari Work</td>
-          <td>166</td>
-          <td>673</td>
-          <td>2269</td>
-          <td>3108</td>
-        </tr>
-        <tr>
-          <td>Bandhani</td>
-          <td>77</td>
-          <td>43</td>
-          <td>215</td>
-          <td>335</td>
-        </tr>
-        <tr>
-          <td>Leheriya</td>
-          <td>25</td>
-          <td>57</td>
-          <td>103</td>
-          <td>185</td>
-        </tr>
-        <tr>
-          <td>Gotta Patti</td>
-          <td>192</td>
-          <td>147</td>
-          <td>57</td>
-          <td>396</td>
-        </tr>
-        <tr>
-          <td>Mirror Work</td>
-          <td>165</td>
-          <td>116</td>
-          <td>54</td>
-          <td>335</td>
-        </tr>
-        <tr>
-          <td>Ethnic Motifs</td>
-          <td>1471</td>
-          <td>-</td>
-          <td>1455</td>
-          <td>2926</td>
-        </tr>
-        <tr>
-          <td>Beads & Stones</td>
-          <td>84</td>
-          <td>191</td>
-          <td>154</td>
-          <td>429</td>
-        </tr>
-        <tr>
-          <td>Floral Motifs</td>
-          <td>1387</td>
-          <td>-</td>
-          <td>1403</td>
-          <td>2790</td>
-        </tr>
-      </tbody>
-    </table>
-  
-
-
-
-
-    <table border="1" cellpadding="10" cellspacing="0">
-      <thead>
-        <tr>
-          <th>Pattern</th>
-          <th>Count</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Solid</td>
-          <td>572</td>
-        </tr>
-        <tr>
-          <td>Ethnic Motifs</td>
-          <td>370</td>
-        </tr>
-        <tr>
-          <td>Geometric</td>
-          <td>235</td>
-        </tr>
-        <tr>
-          <td>Striped</td>
-          <td>186</td>
-        </tr>
-        <tr>
-          <td>Floral</td>
-          <td>127</td>
-        </tr>
-        <tr>
-          <td>Woven Design</td>
-          <td>66</td>
-        </tr>
-        <tr>
-          <td>Abstract</td>
-          <td>62</td>
-        </tr>
-      </tbody>
-    </table>
-    
-
-
-
-
-    <table border="1" cellpadding="10" cellspacing="0">
-      <thead>
-        <tr>
-          <th colspan="2">Women’s Ethnic Clothes</th>
-          <th colspan="2">Men’s Ethnic Clothes</th>
-        </tr>
-        <tr>
-          <th>Cloth Name</th>
-          <th>Count</th>
-          <th>Cloth Name</th>
-          <th>Count</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Tops</td>
-          <td>6167</td>
-          <td>Kurtas</td>
-          <td>1719</td>
-        </tr>
-        <tr>
-          <td>Sarees</td>
-          <td>6005</td>
-          <td>Sherwanis</td>
-          <td>1498</td>
-        </tr>
-        <tr>
-          <td>Kurtas</td>
-          <td>4549</td>
-          <td>Dhoti Pants</td>
-          <td>1494</td>
-        </tr>
-        <tr>
-          <td>Maxi Skirts</td>
-          <td>2481</td>
-          <td>Nehru Jackets</td>
-          <td>1748</td>
-        </tr>
-        <tr>
-          <td>Lehengas</td>
-          <td>3377</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><strong>Total</strong></td>
-          <td><strong>22579</strong></td>
-          <td><strong>Total</strong></td>
-          <td><strong>6459</strong></td>
-        </tr>
-      </tbody>
-    </table>
+<!-- Fancy CSS for Tables -->
+<style>
+  .fancy-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .fancy-table th, .fancy-table td {
+    padding: 12px 15px;
+    text-align: center;
+  }
+  .fancy-table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+  }
+  .fancy-table td {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  .fancy-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  .fancy-table td strong {
+    color: #2e8b57;
+  }
+</style>
     
 
 

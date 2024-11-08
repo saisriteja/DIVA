@@ -141,15 +141,8 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Virtual try-on technology has seen significant advancements in recent years, particularly in the domain of apparel visualization. However, a notable gap exists in high-resolution ($720 \times 540$) datasets that adequately represent diverse poses and orientations for Indic clothing styles. To address this, we introduce a novel dataset, IndicViton, comprising multiple poses of the same garment around the wearer. This dataset fills a critical void as existing open-source collections lack such diversity. In addition to dataset creation, we propose an initial diffusion model(DIVA) tailored for Indic virtual try-on applications. Our model leverages a novel approach to handle multi-pose garment images, enabling realistic and accurate virtual fitting experiences. Central to our methodology is the utilization of diffusion models, which excel in capturing intricate details and variations in fabric textures.
-          </p>
-          <p>
-            In this work, we propose Lift3D, an inverted 2D-to-3D generation framework to achieve the data generation objectives.
-            Lift3D has several merits compared to prior methods: (1) Unlike previous 3D GANs that the output resolution is fixed
-            after training, Lift3D can generalize to any camera intrinsic with higher resolution and photorealistic output. (2) By
-            lifting well-disentangled 2D GAN to 3D object NeRF, Lift3D provides explicit 3D information of generated objects, thus
-            offering accurate 3D annotations for downstream tasks.
-          </p>
+            Virtual try-on technology has seen significant advancements in recent years, particularly in the domain of apparel visualization. However, a notable gap exists in high-resolution (720 &times; 540) datasets that adequately represent diverse poses and orientations for Indic clothing styles. To address this, we introduce a novel dataset, IndicViton, comprising multiple poses of the same garment around the wearer. This dataset fills a critical void as existing open-source collections lack such diversity. In addition to dataset creation, we propose an initial diffusion model (DIVA) tailored for Indic virtual try-on applications. Our model leverages a novel approach to handle multi-pose garment images, enabling realistic and accurate virtual fitting experiences. Central to our methodology is the utilization of diffusion models, which excel in capturing intricate details and variations in fabric textures.
+        </p>        
           <p>
             To validate our approach, we conducted comprehensive experimental evaluations, comparing our results against established benchmarks. Results demonstrated superior visual fidelity and quantitative performance in Indic virtual try-on scenarios. By providing this dataset and model, we aim to spur further research and development in virtual try-on technologies tailored for Indic clothing styles. The link for the dataset is attached <a href="https://huggingface.co/datasets/saisriteja/DIVA/tree/main">here</a>.
         </p>        
@@ -162,11 +155,10 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method</h2>
-        <img src="./static/lift3d_method.png" class="center" width="800px">
+        <img src="./static/fs_images/imgs/intro.drawio.jpg" class="center" width="800px">
         <div class="content has-text-justified">
           <p>
-            By distilling 3D knowledge from a well-trained 2D GAN, <strong>Lift3D</strong> enables training data generation and
-            providing photorealistic synthesis and precise 3D annotation.
+            Generated results of DIVA Model which is trained on IndicViton dataset.
           </p>
         </div>
       </div>
@@ -184,52 +176,56 @@
 
 <div class="columns is-centered has-text-centered">
   <div class="column is-four-fifths">
-    <h2 class="title is-3">Results</h2>
-    <img src="./static/lift3d_compos.png" class="center" width="1000px">
+    <!-- <h2 class="title is-3">Results</h2> -->
+    <img src="static/fs_images/imgs/dataset.jpg" class="center" width="1000px">
     <div class="content has-text-justified">
         <p style="text-align:center">
-          We show generation result of <strong>Lift3D</strong>. The images are composited by our generated objects and original background.
+          Diverse Indian clothing examples from the IndicViton dataset.
         </p>
     </div>
   </div>
 </div>
 
 
-
 <div class="columns is-centered has-text-centered">
-  <div class="column is-three-fifths">
-    <h4 class="title is-4">Relevent work</h4>
-
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Results</h2>
+    <img src="static/fs_images/imgs/final_imgs/men_clothing.jpg" class="center" width="1000px">
     <div class="content has-text-justified">
-      <p>
-        There are some excellent work on driving scene simulation introduced recently. If you are interested in this direction, please also check them out.
-      </p>
-      <p>
-        <a href="https://arxiv.org/abs/2303.10340">Drive-3DAug</a> first collect assets using NeRF, then augment these objects into existing scenes.
-      </p>
-      <p>
-        <a href="https://lv3d.github.io/urbanGIRAFFE/">urbanGIRAFFE</a> uses a coarse 3D panoptic prior to guide a 3D-aware generative model.
-      </p>
-      <p>
-        <a href="https://snap-research.github.io/discoscene/">DiscoScene</a> uses object-level representation to disentangle objects and background generation.
-      </p>
-      <p>
-        <a href="https://openreview.net/forum?id=Mp3Y5jd7rnW">CADSim</a> create large scale and steerable assets by CAD guidance. I love this work!
-      </p>
-      <p>
-        <a href="https://arxiv.org/abs/2304.02163">GINA-3D</a> generate neural assets in the wild with long-tail instances.
-      </p>
-      <p>
-        <a href="https://mp.weixin.qq.com/s/-gJKN6EGDPK2VWV5sgUavg">neuralsim</a>. Towards close loop evaluation of self driving car. Train your self driving car in metaverse!
-      </p>
-      <p>
-        <a href="https://nv-tlabs.github.io/fegr/">FEGR</a>. Research work of NVIDIA Neural DriveSim. Intrinsic decomposition of urban scenes. A great system work.
-      </p>
-
+        <p style="text-align:center">
+          Qualitative comparison between models for men’s clothing: Each row displays Agnostic Map and Target Cloth Ground Truth, followed by results generated
+by CATDM, Stable-VITON, and DIVA.
+        </p>
     </div>
   </div>
 </div>
-<!--/ Concurrent Work. -->
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Results</h2>
+    <img src="static/fs_images/imgs/final_imgs/women_clothing.jpg" class="center" width="1000px">
+    <div class="content has-text-justified">
+        <p style="text-align:center">
+          Qualitative comparison between models for women clothing: Each row displays Agnostic Map and Target Cloth Ground Truth, followed by results generated
+by CATDM, Stable-VITON, and DIVA.
+        </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Results</h2>
+    <img src="static/fs_images/imgs/final_imgs/scribble_map_crop.drawio.jpg" class="center" width="1000px">
+    <div class="content has-text-justified">
+        <p style="text-align:center">
+          Generated sarees from various scribble maps, highlighting the influence of map variations.
+        </p>
+    </div>
+  </div>
+</div>
 
 
 
@@ -239,12 +235,9 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@InProceedings{lift3D2023CVPR, 
-	author = {Leheng Li and Qing Lian and Luozhou Wang and Ningning Ma and Ying-Cong Chen}, 
-	title = {Lift3D: Synthesize 3D Training Data by Lifting 2D GAN to 3D Generative Radiance Field}, 
-	booktitle = {Proc. IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)}, 
-	year = {2023}, 
-}</code></pre>
+    <pre><code>K Sai Sri Teja, Hrishith Mitra, Girish Rongali, Kaushik Mitra, DIVA- Deep Indic Virtual Apparel Try-On.
+      ECCV Workshop 2024.
+</code></pre>
   </div>
 </section>
 
@@ -267,9 +260,6 @@
           <p style="text-align:center">
             Web source code mainly borrowed from <a href="https://keunhong.com/">Keunhong Park</a>'s <a
               href="https://nerfies.github.io/">Nerfies website</a>.
-          </p>
-          <p style="text-align:center">
-            Please contact <a href="https://len-li.github.io/">Leheng Li</a> if you have feedback or questions for this project.
           </p>
         </div>
       </div>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Lift3D: use NeRF to create training data.">
+  <meta name="keywords" content="NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lift3D: Synthesize 3D Training Data by Lifting 2D GAN to 3D Generative Radiance Field</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/UST.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+  
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Lift3D: Synthesize 3D Training Data by Lifting 2D GAN to 3D Generative Radiance Field</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://len-li.github.io/">Leheng Li</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=-3R0Cr0AAAAJ&hl=en">Qing Lian</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/wileewang">Luozhou Wang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://nmaac.github.io/home/">Ningning Ma</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.yingcong.me/">Ying-Cong Chen</a><sup>1,2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>HKUST(GZ),</span>
+            <span class="author-block"><sup>2</sup>HKUST</span>
+            <span class="author-block"><sup>3</sup>NIO Autonomous Driving</span>
+          </div>
+
+           <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="http://arxiv.org/abs/2304.03526"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://len-li.github.io/assets/pdf/lift3d_supp.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supp.</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Len-Li/Lift3D"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div> 
+          </div> 
+        </div> 
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            This work explores the use of 3D generative models to synthesize training data for 3D vision tasks. The key requirements
+            of the generative models are that the generated data should be photorealistic to match the real-world scenarios, and the
+            corresponding 3D attributes should be aligned with given sampling labels. However, we find that the recent NeRF-based 3D
+            GANs hardly meet the above requirements due to their designed generation pipeline and the lack of explicit 3D
+            supervision.
+          </p>
+          <p>
+            In this work, we propose Lift3D, an inverted 2D-to-3D generation framework to achieve the data generation objectives.
+            Lift3D has several merits compared to prior methods: (1) Unlike previous 3D GANs that the output resolution is fixed
+            after training, Lift3D can generalize to any camera intrinsic with higher resolution and photorealistic output. (2) By
+            lifting well-disentangled 2D GAN to 3D object NeRF, Lift3D provides explicit 3D information of generated objects, thus
+            offering accurate 3D annotations for downstream tasks.
+          </p>
+          <p>
+            We evaluate the effectiveness of our framework by augmenting autonomous driving datasets. Experimental results
+            demonstrate that our data generation framework can effectively improve the performance of 3D object detectors.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <img src="./static/lift3d_method.png" class="center" width="800px">
+        <div class="content has-text-justified">
+          <p>
+            By distilling 3D knowledge from a well-trained 2D GAN, <strong>Lift3D</strong> enables training data generation and
+            providing photorealistic synthesis and precise 3D annotation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+
+  </div>
+
+</section>
+
+	
+
+
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Results</h2>
+    <img src="./static/lift3d_compos.png" class="center" width="1000px">
+    <div class="content has-text-justified">
+        <p style="text-align:center">
+          We show generation result of <strong>Lift3D</strong>. The images are composited by our generated objects and original background.
+        </p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-three-fifths">
+    <h4 class="title is-4">Relevent work</h4>
+
+    <div class="content has-text-justified">
+      <p>
+        There are some excellent work on driving scene simulation introduced recently. If you are interested in this direction, please also check them out.
+      </p>
+      <p>
+        <a href="https://arxiv.org/abs/2303.10340">Drive-3DAug</a> first collect assets using NeRF, then augment these objects into existing scenes.
+      </p>
+      <p>
+        <a href="https://lv3d.github.io/urbanGIRAFFE/">urbanGIRAFFE</a> uses a coarse 3D panoptic prior to guide a 3D-aware generative model.
+      </p>
+      <p>
+        <a href="https://snap-research.github.io/discoscene/">DiscoScene</a> uses object-level representation to disentangle objects and background generation.
+      </p>
+      <p>
+        <a href="https://openreview.net/forum?id=Mp3Y5jd7rnW">CADSim</a> create large scale and steerable assets by CAD guidance. I love this work!
+      </p>
+      <p>
+        <a href="https://arxiv.org/abs/2304.02163">GINA-3D</a> generate neural assets in the wild with long-tail instances.
+      </p>
+      <p>
+        <a href="https://mp.weixin.qq.com/s/-gJKN6EGDPK2VWV5sgUavg">neuralsim</a>. Towards close loop evaluation of self driving car. Train your self driving car in metaverse!
+      </p>
+      <p>
+        <a href="https://nv-tlabs.github.io/fegr/">FEGR</a>. Research work of NVIDIA Neural DriveSim. Intrinsic decomposition of urban scenes. A great system work.
+      </p>
+
+    </div>
+  </div>
+</div>
+<!--/ Concurrent Work. -->
+
+
+
+
+	
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@InProceedings{lift3D2023CVPR, 
+	author = {Leheng Li and Qing Lian and Luozhou Wang and Ningning Ma and Ying-Cong Chen}, 
+	title = {Lift3D: Synthesize 3D Training Data by Lifting 2D GAN to 3D Generative Radiance Field}, 
+	booktitle = {Proc. IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)}, 
+	year = {2023}, 
+}</code></pre>
+  </div>
+</section>
+
+  
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://len-li.github.io/assets/pdf/lift3d_final.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/Len-Li" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align:center">
+            Web source code mainly borrowed from <a href="https://keunhong.com/">Keunhong Park</a>'s <a
+              href="https://nerfies.github.io/">Nerfies website</a>.
+          </p>
+          <p style="text-align:center">
+            Please contact <a href="https://len-li.github.io/">Leheng Li</a> if you have feedback or questions for this project.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

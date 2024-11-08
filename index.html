@@ -166,6 +166,33 @@
     </div>
     <!-- /Method -->
 
+
+    <!-- Method -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <figure>
+          <!-- Image -->
+          <img src="./static/fs_images/imgs/final_imgs/model_flow.jpg" class="center" width="800px" alt="Method illustration">
+
+          <!-- Caption -->
+          <figcaption>
+            Overview of the DIVA model’s training and inference processes integrating conditioning inputs:
+            <ul>
+              <li>Agnostic Map (AM)</li>
+              <li>AM Mask (AMM)</li>
+              <li>DensePose (DP)</li>
+              <li>Cloth Garment (CG)</li>
+              <li>Scribble Map (SM)</li>
+            </ul>
+            During training, DIVA refines noise \( x_t \) iteratively using these inputs to generate culturally authentic images. During inference, it leverages ESRGAN for enhanced resolution post-generation. The Scribble Map (SM) serves as a valuable prior, crucial for preserving traditional nuances in Indian clothing during virtual try-ons.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <!-- /Method -->
+
+
+
     <!-- Dataset Examples -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -178,6 +205,195 @@
       </div>
     </div>
     <!-- /Dataset Examples -->
+
+
+
+    <h1>Dataset Analytics</h1>
+
+
+
+    <h3>Women’s Clothing Analytics</h3>
+    <table border="1" cellpadding="10" cellspacing="0">
+      <thead>
+        <tr>
+          <th rowspan="2">Embellishment/Design Element</th>
+          <th colspan="3">Cloth Type</th>
+          <th rowspan="2">Total</th>
+        </tr>
+        <tr>
+          <th>Kurtas</th>
+          <th>Lehengas</th>
+          <th>Sarees</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sequins</td>
+          <td>332</td>
+          <td>684</td>
+          <td>325</td>
+          <td>1341</td>
+        </tr>
+        <tr>
+          <td>Zari Work</td>
+          <td>166</td>
+          <td>673</td>
+          <td>2269</td>
+          <td>3108</td>
+        </tr>
+        <tr>
+          <td>Bandhani</td>
+          <td>77</td>
+          <td>43</td>
+          <td>215</td>
+          <td>335</td>
+        </tr>
+        <tr>
+          <td>Leheriya</td>
+          <td>25</td>
+          <td>57</td>
+          <td>103</td>
+          <td>185</td>
+        </tr>
+        <tr>
+          <td>Gotta Patti</td>
+          <td>192</td>
+          <td>147</td>
+          <td>57</td>
+          <td>396</td>
+        </tr>
+        <tr>
+          <td>Mirror Work</td>
+          <td>165</td>
+          <td>116</td>
+          <td>54</td>
+          <td>335</td>
+        </tr>
+        <tr>
+          <td>Ethnic Motifs</td>
+          <td>1471</td>
+          <td>-</td>
+          <td>1455</td>
+          <td>2926</td>
+        </tr>
+        <tr>
+          <td>Beads & Stones</td>
+          <td>84</td>
+          <td>191</td>
+          <td>154</td>
+          <td>429</td>
+        </tr>
+        <tr>
+          <td>Floral Motifs</td>
+          <td>1387</td>
+          <td>-</td>
+          <td>1403</td>
+          <td>2790</td>
+        </tr>
+      </tbody>
+    </table>
+  
+
+
+
+
+    <table border="1" cellpadding="10" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Pattern</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Solid</td>
+          <td>572</td>
+        </tr>
+        <tr>
+          <td>Ethnic Motifs</td>
+          <td>370</td>
+        </tr>
+        <tr>
+          <td>Geometric</td>
+          <td>235</td>
+        </tr>
+        <tr>
+          <td>Striped</td>
+          <td>186</td>
+        </tr>
+        <tr>
+          <td>Floral</td>
+          <td>127</td>
+        </tr>
+        <tr>
+          <td>Woven Design</td>
+          <td>66</td>
+        </tr>
+        <tr>
+          <td>Abstract</td>
+          <td>62</td>
+        </tr>
+      </tbody>
+    </table>
+    
+
+
+
+
+    <table border="1" cellpadding="10" cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="2">Women’s Ethnic Clothes</th>
+          <th colspan="2">Men’s Ethnic Clothes</th>
+        </tr>
+        <tr>
+          <th>Cloth Name</th>
+          <th>Count</th>
+          <th>Cloth Name</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tops</td>
+          <td>6167</td>
+          <td>Kurtas</td>
+          <td>1719</td>
+        </tr>
+        <tr>
+          <td>Sarees</td>
+          <td>6005</td>
+          <td>Sherwanis</td>
+          <td>1498</td>
+        </tr>
+        <tr>
+          <td>Kurtas</td>
+          <td>4549</td>
+          <td>Dhoti Pants</td>
+          <td>1494</td>
+        </tr>
+        <tr>
+          <td>Maxi Skirts</td>
+          <td>2481</td>
+          <td>Nehru Jackets</td>
+          <td>1748</td>
+        </tr>
+        <tr>
+          <td>Lehengas</td>
+          <td>3377</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td><strong>22579</strong></td>
+          <td><strong>Total</strong></td>
+          <td><strong>6459</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    
+
 
     <!-- Results: Men’s Clothing -->
     <div class="columns is-centered has-text-centered">

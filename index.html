@@ -141,11 +141,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This work explores the use of 3D generative models to synthesize training data for 3D vision tasks. The key requirements
-            of the generative models are that the generated data should be photorealistic to match the real-world scenarios, and the
-            corresponding 3D attributes should be aligned with given sampling labels. However, we find that the recent NeRF-based 3D
-            GANs hardly meet the above requirements due to their designed generation pipeline and the lack of explicit 3D
-            supervision.
+            Virtual try-on technology has seen significant advancements in recent years, particularly in the domain of apparel visualization. However, a notable gap exists in high-resolution ($720 \times 540$) datasets that adequately represent diverse poses and orientations for Indic clothing styles. To address this, we introduce a novel dataset, IndicViton, comprising multiple poses of the same garment around the wearer. This dataset fills a critical void as existing open-source collections lack such diversity. In addition to dataset creation, we propose an initial diffusion model(DIVA) tailored for Indic virtual try-on applications. Our model leverages a novel approach to handle multi-pose garment images, enabling realistic and accurate virtual fitting experiences. Central to our methodology is the utilization of diffusion models, which excel in capturing intricate details and variations in fabric textures.
           </p>
           <p>
             In this work, we propose Lift3D, an inverted 2D-to-3D generation framework to achieve the data generation objectives.
@@ -155,9 +151,8 @@
             offering accurate 3D annotations for downstream tasks.
           </p>
           <p>
-            We evaluate the effectiveness of our framework by augmenting autonomous driving datasets. Experimental results
-            demonstrate that our data generation framework can effectively improve the performance of 3D object detectors.
-          </p>
+            To validate our approach, we conducted comprehensive experimental evaluations, comparing our results against established benchmarks. Results demonstrated superior visual fidelity and quantitative performance in Indic virtual try-on scenarios. By providing this dataset and model, we aim to spur further research and development in virtual try-on technologies tailored for Indic clothing styles. The link for the dataset is attached <a href="https://huggingface.co/datasets/saisriteja/DIVA/tree/main">here</a>.
+        </p>        
         </div>
       </div>
     </div>
